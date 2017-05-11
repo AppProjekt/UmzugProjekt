@@ -37,8 +37,7 @@ public class Umzug
         
         if(connection != null)
         {
-            setImage();
-            
+            setImage();            
             mainFrame = new UmzugFrame();
             mainFrame.setTitle("Umzug Tool");
             mainFrame.setIconImage(img);
@@ -66,8 +65,7 @@ public class Umzug
     {
         java.awt.Rectangle parentRect = java.awt.GraphicsEnvironment.getLocalGraphicsEnvironment().getMaximumWindowBounds();
        
-        mainFrame.setSize(parentRect.width, parentRect.height);             
-
+        mainFrame.setSize(parentRect.width, parentRect.height);        
         mainFrame.setLocation(0, 0);
         mainFrame.setResizable(true);
         mainFrame.setDefaultCloseOperation(JFrame.EXIT_ON_CLOSE);
