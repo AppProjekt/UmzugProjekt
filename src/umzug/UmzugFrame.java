@@ -17,6 +17,8 @@ public class UmzugFrame extends javax.swing.JFrame
      * Creates new form UmzugFrame
      */    
     UmzugJPanel jpUmzugPane = null;
+    NeueArtikelEditJPanel neueArtikelEditJPanel = null;
+    
     public String tabName = "";
     public CardLayout cardLayout = null;
     
@@ -25,6 +27,7 @@ public class UmzugFrame extends javax.swing.JFrame
         super();
         initComponents();        
         umzugPanelInit();
+        neuArtikelPanelInit();
         
         cardLayout = (CardLayout) jpCardPanel.getLayout();
     }
@@ -50,6 +53,8 @@ public class UmzugFrame extends javax.swing.JFrame
         jLabel1_14 = new javax.swing.JLabel();
         jButton_Löschen = new javax.swing.JButton();
         jLabel1_13 = new javax.swing.JLabel();
+        jBtnEnde = new javax.swing.JButton();
+        jLabel1_15 = new javax.swing.JLabel();
         jPanel_Daten = new javax.swing.JPanel();
         jpCardPanel = new javax.swing.JPanel();
         jpMenu = new javax.swing.JPanel();
@@ -61,10 +66,11 @@ public class UmzugFrame extends javax.swing.JFrame
 
         jPanel_Menü.setBackground(new java.awt.Color(58, 110, 165));
         jPanel_Menü.setName("jPanel_Menü"); // NOI18N
-        jPanel_Menü.setPreferredSize(new java.awt.Dimension(100, 40));
+        jPanel_Menü.setPreferredSize(new java.awt.Dimension(100, 50));
         jPanel_Menü.setLayout(new java.awt.GridBagLayout());
 
-        jLabel_Menü.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
+        jLabel_Menü.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
+        jLabel_Menü.setForeground(new java.awt.Color(255, 255, 255));
         jLabel_Menü.setText("Menü");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
@@ -82,6 +88,13 @@ public class UmzugFrame extends javax.swing.JFrame
         jButton_Neu.setFocusable(false);
         jButton_Neu.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
         jButton_Neu.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jButton_Neu.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jButton_NeuActionPerformed(evt);
+            }
+        });
         jToolBar_Menü.add(jButton_Neu);
 
         jLabel1_12.setMaximumSize(new java.awt.Dimension(10, 43));
@@ -110,6 +123,29 @@ public class UmzugFrame extends javax.swing.JFrame
         jLabel1_13.setMinimumSize(new java.awt.Dimension(10, 43));
         jLabel1_13.setPreferredSize(new java.awt.Dimension(10, 43));
         jToolBar_Menü.add(jLabel1_13);
+
+        jBtnEnde.setIcon(new javax.swing.ImageIcon(getClass().getResource("/umzug/icons/32-system-log-out.png"))); // NOI18N
+        jBtnEnde.setToolTipText("Verlassen  Strg+Q");
+        jBtnEnde.setFocusable(false);
+        jBtnEnde.setHorizontalTextPosition(javax.swing.SwingConstants.CENTER);
+        jBtnEnde.setMaximumSize(new java.awt.Dimension(45, 43));
+        jBtnEnde.setMinimumSize(new java.awt.Dimension(45, 43));
+        jBtnEnde.setPreferredSize(new java.awt.Dimension(45, 43));
+        jBtnEnde.setVerifyInputWhenFocusTarget(false);
+        jBtnEnde.setVerticalTextPosition(javax.swing.SwingConstants.BOTTOM);
+        jBtnEnde.addActionListener(new java.awt.event.ActionListener()
+        {
+            public void actionPerformed(java.awt.event.ActionEvent evt)
+            {
+                jBtnEndeActionPerformed(evt);
+            }
+        });
+        jToolBar_Menü.add(jBtnEnde);
+
+        jLabel1_15.setMaximumSize(new java.awt.Dimension(10, 43));
+        jLabel1_15.setMinimumSize(new java.awt.Dimension(10, 43));
+        jLabel1_15.setPreferredSize(new java.awt.Dimension(10, 43));
+        jToolBar_Menü.add(jLabel1_15);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 1;
@@ -146,7 +182,7 @@ public class UmzugFrame extends javax.swing.JFrame
         );
         jpMenuLayout.setVerticalGroup(
             jpMenuLayout.createParallelGroup(javax.swing.GroupLayout.Alignment.LEADING)
-            .addGap(0, 607, Short.MAX_VALUE)
+            .addGap(0, 597, Short.MAX_VALUE)
         );
 
         jpCardPanel.add(jpMenu, "jpMenu");
@@ -176,6 +212,18 @@ public class UmzugFrame extends javax.swing.JFrame
         pack();
     }// </editor-fold>//GEN-END:initComponents
 
+    private void jButton_NeuActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jButton_NeuActionPerformed
+    {//GEN-HEADEREND:event_jButton_NeuActionPerformed
+        tabName = "jpArtikelEdit";
+        neueArtikelEditJPanel.panelLoad();        
+        cardLayout.show(jpCardPanel, tabName);
+    }//GEN-LAST:event_jButton_NeuActionPerformed
+
+    private void jBtnEndeActionPerformed(java.awt.event.ActionEvent evt)//GEN-FIRST:event_jBtnEndeActionPerformed
+    {//GEN-HEADEREND:event_jBtnEndeActionPerformed
+        // TODO add your handling code here:
+    }//GEN-LAST:event_jBtnEndeActionPerformed
+
     /**
      * @param args the command line arguments
      */
@@ -195,13 +243,23 @@ public class UmzugFrame extends javax.swing.JFrame
         jpCardPanel.add(jpUmzugPane, tabName);
     }
     
+    private void neuArtikelPanelInit() 
+    {
+        neueArtikelEditJPanel = new NeueArtikelEditJPanel();
+
+        tabName = neueArtikelEditJPanel.getName();
+        jpCardPanel.add(neueArtikelEditJPanel, tabName);
+    }
+    
     // Variables declaration - do not modify//GEN-BEGIN:variables
+    private javax.swing.JButton jBtnEnde;
     private javax.swing.JButton jButton_Löschen;
     private javax.swing.JButton jButton_Neu;
     private javax.swing.JButton jButton_Speichern;
     private javax.swing.JLabel jLabel1_12;
     private javax.swing.JLabel jLabel1_13;
     private javax.swing.JLabel jLabel1_14;
+    private javax.swing.JLabel jLabel1_15;
     private javax.swing.JLabel jLabel_Menü;
     private javax.swing.JPanel jPanel_Daten;
     private javax.swing.JPanel jPanel_Menü;

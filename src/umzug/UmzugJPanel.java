@@ -75,7 +75,7 @@ public class UmzugJPanel extends javax.swing.JPanel
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 1;
-        gridBagConstraints.insets = new java.awt.Insets(20, 0, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(60, 0, 0, 0);
         jPanel_Umzug.add(jLabel_Kategorie, gridBagConstraints);
 
         jLabel_Dringlichkeit.setFont(new java.awt.Font("Tahoma", 1, 14)); // NOI18N
@@ -95,7 +95,7 @@ public class UmzugJPanel extends javax.swing.JPanel
         jPanel_Umzug.add(jComboBox_Dringlichkeit, gridBagConstraints);
 
         jLabel3.setFont(new java.awt.Font("Tahoma", 1, 18)); // NOI18N
-        jLabel3.setText("Umzug to Do Liste");
+        jLabel3.setText("ToDo-Liste");
         gridBagConstraints = new java.awt.GridBagConstraints();
         gridBagConstraints.gridx = 0;
         gridBagConstraints.gridy = 0;
@@ -121,7 +121,7 @@ public class UmzugJPanel extends javax.swing.JPanel
         gridBagConstraints.fill = java.awt.GridBagConstraints.BOTH;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
-        gridBagConstraints.insets = new java.awt.Insets(20, 0, 0, 0);
+        gridBagConstraints.insets = new java.awt.Insets(20, 10, 10, 10);
         jPanel_Umzug.add(jScrollPane_Artikeln, gridBagConstraints);
 
         gridBagConstraints = new java.awt.GridBagConstraints();
@@ -131,6 +131,7 @@ public class UmzugJPanel extends javax.swing.JPanel
         gridBagConstraints.anchor = java.awt.GridBagConstraints.NORTHWEST;
         gridBagConstraints.weightx = 1.0;
         gridBagConstraints.weighty = 1.0;
+        gridBagConstraints.insets = new java.awt.Insets(10, 0, 0, 0);
         add(jPanel_Umzug, gridBagConstraints);
     }// </editor-fold>//GEN-END:initComponents
 

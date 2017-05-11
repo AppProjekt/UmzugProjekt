@@ -53,7 +53,7 @@ public class Umzug
         try 
         {
             Toolkit kit = Toolkit.getDefaultToolkit();
-            img = kit.createImage(ClassLoader.getSystemResource("umzug/icons/Umzug.gif"));
+            img = kit.createImage(ClassLoader.getSystemResource("umzug/icons/Umzug.png"));
         } 
         catch (Exception e) 
         {
